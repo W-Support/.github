@@ -1,5 +1,5 @@
-# Hisense LLM - A Practicum II Project
-This organisation was created for a project collaburation with Hisense. Our goal is to develop an LLM support chatbot for them.
+# Hisense LLM
+This organisation was created for a project collaboration with Hisense. Our goal is to develop a support chatbot with and an interactive FAQ system, to help relieve the workload from their IT support technicians.
 ## License
 TBA
 ## Code Of Conduct
