@@ -105,8 +105,7 @@ Ensure you have the following installed on your development machine:
 ### Installation
 Clone the frontend and backend repositories:
 ```bash
-git clone https://github.com/yourusername/support-sage-frontend.git
-git clone https://github.com/yourusername/support-sage-backend.git
+TBA
 ```
 
 Install dependencies for the frontend and backend:
