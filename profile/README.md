@@ -1,10 +1,156 @@
-# Hisense LLM
-This organisation was created for a project collaboration with Hisense. Our goal is to develop a support chatbot with and an interactive FAQ system, to help relieve the workload from their IT support technicians.
+# SupportSage: Hisense AI-Powered Support Chatbot
+This project, developed in collaboration with Hisense, aims to create an AI-driven support chatbot named SupportSage. SupportSage will utilize a combination of chat interaction and an interactive FAQ system to enhance Hisense's customer support capabilities and reduce the workload on IT support technicians.
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Project Goals](#project-goals)
+- [Technical Overview](#technical-overview)
+    - [Architecture](#architecture)
+    - [Components](#components)
+- [Local Development](#local-development)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Running the Application](#running-the-application)
+    - [Testing](#testing)
+- [Deployment](#deployment)
+- [License](#license)
+- [Code of Conduct](#code-of-conduct)
+- [Security](#security)
+- [Contact](#contact)
+
+## Introduction
+SupportSage is designed to provide efficient and accurate support to Hisense customers. By leveraging a large language model (LLM) and an interactive FAQ system, the chatbot can understand and respond to user queries, troubleshoot common issues, and guide users to relevant solutions. This will significantly improve the user experience, reduce response times, and free up valuable resources for more complex support issues.
+
+## Project Goals
+- **Enhanced Customer Support**: Provide 24/7 availability and faster response times to customer inquiries.
+- **Reduced Support Costs**: Lower the workload on IT support staff by automating responses to common questions.
+- **Improved User Experience**: Deliver a personalized and intuitive support experience through natural language interactions.
+- **Scalability**: Design a system that can easily adapt to increasing user demand and expanding knowledge bases.
+
+## Technical Overview
+SupportSage is built using a modern technology stack that combines the strengths of various programming languages and frameworks:
+
+### Architecture
+The system follows a microservice architecture, where each component has a distinct responsibility:
+
+```mermaid
+graph LR
+    subgraph Frontend
+    A["Angular Frontend"] -->|POST Request with Message| B["Express.js Proxy"]
+    end
+
+    subgraph Proxy
+    B["Express.js Proxy"] -->|Forwards Request| C["Rust Backend: main"]
+    D["Rust Backend: handle_chat_message"] -->|Response| B["Express.js Proxy"]
+    B["Express.js Proxy"] -->|Response| A["Angular Frontend"]
+    end
+
+    subgraph Backend
+    C["Rust Backend: main"] -->|Start Server, Setup CORS| D["Rust Backend: handle_chat_message"]
+    D["Rust Backend: handle_chat_message"] --> E["Extract Message from Request"]
+    E["Extract Message from Request"] --> F["Create Ollama Generation Request"]
+    F["Create Ollama Generation Request"] --> G["Stream Response from Ollama"]
+    G["Stream Response from Ollama"] --> H{Is Stream Complete?}
+    H{Is Stream Complete?} -->|No| G["Stream Response from Ollama"]
+    H{Is Stream Complete?} -->|Yes| I["Create JSON Response (ChatMessage)"]
+    I["Create JSON Response (ChatMessage)"] --> D["Rust Backend: handle_chat_message"]
+    end
+```
+
+### Components
+#### Frontend (Angular)
+The Angular frontend is responsible for:
+- **User Interface**: Displaying the chat interface, user messages, and chatbot responses.
+- **Input Handling**: Capturing user input and sending it to the backend for processing.
+- **Response Display**: Rendering the AI-generated responses in the chat window.
+
+#### Proxy (Express.js)
+The Express.js proxy serves as the intermediary between the frontend and backend. It handles:
+- **Request Routing**: Directing incoming requests to the appropriate backend service.
+- **Load Balancing (Optional)**: Distributing requests across multiple backend instances for improved performance.
+- **Security**: Implementing security measures like authentication, authorization, and rate limiting.
+
+#### Backend (Rust)
+The Rust backend is the core of SupportSage, handling the AI interactions. It includes:
+- **Message Processing**: Receiving user messages from the proxy, processing them with the Ollama LLM, and generating responses.
+- **Error Handling**: Managing errors and exceptions that may occur during processing.
+- **CORS Handling**: Enabling cross-origin resource sharing for secure communication with the frontend.
+
+### API Endpoints
+- **POST /api/v1/chat**: This endpoint handles incoming chat messages from the frontend and returns the AI generated responses.
+    - **URL**: [http://127.0.0.1:8080/api/v1/chat](http://127.0.0.1:8080/api/v1/chat)
+    - **Method**: POST
+    - **Headers**: Content-Type: application/json
+    - **Body**:
+      ```json
+      {
+        "message": "Your message here"
+      }
+      ```
+    - **Response**:
+      ```json
+      {
+        "message": "Your message here",
+        "ai_response": "AI's response here"
+      }
+      ```
+
+## Local Development
+### Prerequisites
+Ensure you have the following installed on your development machine:
+- Node.js and npm/yarn: For running the Express.js proxy.
+- Rust Toolchain: Rustup is recommended for installing and managing Rust.
+- Ollama: Install and configure Ollama according to their official documentation.
+
+### Installation
+Clone the frontend and backend repositories:
+```bash
+git clone https://github.com/yourusername/support-sage-frontend.git
+git clone https://github.com/yourusername/support-sage-backend.git
+```
+
+Install dependencies for the frontend and backend:
+```bash
+cd support-sage-frontend
+npm install
+# or
+yarn install
+
+cd support-sage-backend
+cargo build
+```
+
+### Running the Application
+Start the Rust Backend:
+```bash
+cd support-sage-backend
+cargo run
+```
+
+Start the Express.js Proxy:
+```bash
+cd support-sage-frontend
+npm start
+# or
+yarn start
+```
+
+Open Your Browser:  Open your browser to [http://localhost:4200](http://localhost:4200) (or the appropriate port for your frontend).
+
+### Testing
+You can use tools like Postman to send requests to the `/api/v1/chat` endpoint with different messages and verify that the backend responds correctly. Refer to the Testing with Postman section in the Rust backend README for detailed instructions.
+
+## Deployment
+(Provide details on how to deploy each component to your chosen production environment, such as cloud services or your own servers.)
+
 ## License
-TBA
-## Code Of Conduct
-The code of conduct outlines expected behavior for this organisation's members. TBA
+[To Be Determined]
+
+## Code of Conduct
+[To Be Determined]
+
 ## Security
-TBA
+[To Be Determined]
+
 ## Contact
-Please contact us at the listed email.
+For any questions or inquiries, please contact us at [your email address].
