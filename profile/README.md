@@ -58,19 +58,19 @@ graph TD
 ```
 
 ### Components
-#### Frontend (Angular)
+#### [Frontend (Angular)](https://github.com/Hisense-LLM/frontend)
 The Angular frontend is responsible for:
 - **User Interface**: Displaying the chat interface, user messages, and chatbot responses.
 - **Input Handling**: Capturing user input and sending it to the backend for processing.
 - **Response Display**: Rendering the AI-generated responses in the chat window.
 
-#### Proxy (Express.js)
+#### [Proxy (Express.js)](https://github.com/Hisense-LLM/proxy)
 The Express.js proxy serves as the intermediary between the frontend and backend. It handles:
 - **Request Routing**: Directing incoming requests to the appropriate backend service.
 - **Load Balancing (Optional)**: Distributing requests across multiple backend instances for improved performance.
 - **Security**: Implementing security measures like authentication, authorization, and rate limiting.
 
-#### Backend (Rust)
+#### [Backend (Rust)](https://github.com/Hisense-LLM/backend)
 The Rust backend is the core of SupportSage, handling the AI interactions. It includes:
 - **Message Processing**: Receiving user messages from the proxy, processing them with the Ollama LLM, and generating responses.
 - **Error Handling**: Managing errors and exceptions that may occur during processing.
