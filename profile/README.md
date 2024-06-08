@@ -12,10 +12,6 @@ This project, developed in collaboration with Hisense, aims to create an AI-driv
     - [Installation](#installation)
     - [Running the Application](#running-the-application)
     - [Testing](#testing)
-- [Deployment](#deployment)
-- [License](#license)
-- [Code of Conduct](#code-of-conduct)
-- [Security](#security)
 - [Contact](#contact)
 
 ## Introduction
@@ -34,18 +30,18 @@ SupportSage is built using a modern technology stack that combines the strengths
 The system follows a microservice architecture, where each component has a distinct responsibility:
 
 ```mermaid
-graph LR
-    subgraph Frontend
+graph TD
+  subgraph Frontend
     A["Angular Frontend"] -->|POST Request with Message| B["Express.js Proxy"]
-    end
+  end
 
-    subgraph Proxy
+  subgraph Proxy
     B["Express.js Proxy"] -->|Forwards Request| C["Rust Backend: main"]
     D["Rust Backend: handle_chat_message"] -->|Response| B["Express.js Proxy"]
     B["Express.js Proxy"] -->|Response| A["Angular Frontend"]
-    end
+  end
 
-    subgraph Backend
+  subgraph Backend
     C["Rust Backend: main"] -->|Start Server, Setup CORS| D["Rust Backend: handle_chat_message"]
     D["Rust Backend: handle_chat_message"] --> E["Extract Message from Request"]
     E["Extract Message from Request"] --> F["Create Ollama Generation Request"]
@@ -54,7 +50,7 @@ graph LR
     H{Is Stream Complete?} -->|No| G["Stream Response from Ollama"]
     H{Is Stream Complete?} -->|Yes| I["Create JSON Response (ChatMessage)"]
     I["Create JSON Response (ChatMessage)"] --> D["Rust Backend: handle_chat_message"]
-    end
+  end
 ```
 
 ### Components
@@ -135,22 +131,8 @@ npm start
 yarn start
 ```
 
-Open Your Browser:  Open your browser to [http://localhost:4200](http://localhost:4200) (or the appropriate port for your frontend).
-
 ### Testing
 You can use tools like Postman to send requests to the `/api/v1/chat` endpoint with different messages and verify that the backend responds correctly. Refer to the Testing with Postman section in the Rust backend README for detailed instructions.
 
-## Deployment
-(Provide details on how to deploy each component to your chosen production environment, such as cloud services or your own servers.)
-
-## License
-[To Be Determined]
-
-## Code of Conduct
-[To Be Determined]
-
-## Security
-[To Be Determined]
-
 ## Contact
-For any questions or inquiries, please contact us at [your email address].
+For any questions or inquiries, please contact us at our school e-mails!
