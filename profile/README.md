@@ -61,7 +61,7 @@ graph TD
 ```
 
 ### Components
-#### [Frontend (Angular)](https://github.com/Hisense-LLM/frontend)
+#### [Frontend (Angular)](https://github.com/Hisense-LLM/dashboard)
 The Angular frontend is responsible for:
 - **User Interface**: Displaying the chat interface, user messages, and chatbot responses.
 - **Input Handling**: Capturing user input and sending it to the backend for processing.
