@@ -5,6 +5,9 @@
 
 This project, developed in collaboration with Hisense, aims to create an AI-driven support chatbot named SupportSage. SupportSage will utilize a combination of chat interaction and an interactive FAQ system to enhance Hisense's customer support capabilities and reduce the workload on IT support technicians.
 
+![image](https://github.com/Hisense-LLM/.github/assets/90142769/99679a70-24dd-4928-ab0e-f05e880aea49)
+
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Goals](#project-goals)
@@ -23,6 +26,9 @@ This project, developed in collaboration with Hisense, aims to create an AI-driv
 
 ## Introduction
 SupportSage is designed to provide efficient and accurate support to Hisense customers. By leveraging a large language model (LLM) and an interactive FAQ system, the chatbot can understand and respond to user queries, troubleshoot common issues, and guide users to relevant solutions. This will significantly improve the user experience, reduce response times, and free up valuable resources for more complex support issues.
+
+![image (1)](https://github.com/Hisense-LLM/.github/assets/90142769/af2926a7-d4c9-4f15-ae48-9f1c7c80d86b)
+
 
 ## Project Goals
 - **Enhanced Customer Support**: Provide 24/7 availability and faster response times to customer inquiries.
