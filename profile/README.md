@@ -1,11 +1,11 @@
-# SupportSage: Hisense AI-Powered Support Chatbot 
+# W/Support: A platform for customer support with an LLM chatbot
 [![Rust](https://img.shields.io/badge/Rust-black?style=for-the-badge&logo=rust&logoColor=white)](https://www.rust-lang.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-black?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![Angular](https://img.shields.io/badge/Angular-black?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
 
 This project, developed in collaboration with Hisense, aims to create an AI-driven support chatbot named SupportSage. SupportSage will utilize a combination of chat interaction and an interactive FAQ system to enhance Hisense's customer support capabilities and reduce the workload on IT support technicians.
 
-![image](https://github.com/Hisense-LLM/.github/assets/90142769/99679a70-24dd-4928-ab0e-f05e880aea49)
+![gif](https://github.com/Hisense-LLM/_PROMOCIJA/blob/main/Screenshoti/Showcase%20gif.gif)
 
 
 ## Table of Contents
