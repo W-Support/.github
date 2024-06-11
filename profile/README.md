@@ -112,21 +112,9 @@ Ensure you have the following installed on your development machine:
 - Ollama: Install and configure Ollama according to their official documentation.
 
 ### Installation
-Clone the frontend and backend repositories:
-```bash
-TBA
-```
+1. Clone the frontend and backend repositories
+2. Install dependencies
 
-Install dependencies for the frontend and backend:
-```bash
-cd support-sage-frontend
-npm install
-# or
-yarn install
-
-cd support-sage-backend
-cargo build
-```
 
 ### Running the Application
 Start the Rust Backend:
