@@ -3,7 +3,9 @@
 [![Express.js](https://img.shields.io/badge/Express.js-black?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![Angular](https://img.shields.io/badge/Angular-black?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
 
-This project, developed in collaboration with Hisense, aims to create an AI-driven support chatbot named SupportSage. SupportSage will utilize a combination of chat interaction and an interactive FAQ system to enhance Hisense's customer support capabilities and reduce the workload on IT support technicians.
+Introducing W/Support, our state-of-the-art platform designed to transform customer service. 
+At the heart of W/Support is SupportSage, an AI-driven support chatbot that seamlessly integrates to provide an interactive FAQ system and efficient chat interactions. 
+SupportSage handles surface-level inquiries, allowing IT support technicians to concentrate on more complex issues, thus enhancing customer satisfaction and reducing agent workload.
 
 ![gif](https://github.com/Hisense-LLM/_PROMOCIJA/blob/main/Screenshoti/Showcase%20gif.gif)
 
